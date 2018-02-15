@@ -2,7 +2,7 @@
 <html lang=en>
 <head>
     <meta charset="utf-8">
-    <meta property="fb:app_id" content="208299293241640" />
+    <meta property="fb:app_id" content="166618053965795" />
     <meta property="og:image" content="https://eli-jordan.github.io/css/images/me.jpeg" />
     
     <title>testPage | Adjunction</title>
@@ -201,7 +201,7 @@
 
 </div>
 
-    <a data-url="https://eli-jordan.github.io/testPage/index.html" data-id="cjdokuxw10001v5lzr2888hf6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://eli-jordan.github.io/testPage/index.html" data-id="cjdolya0c0001o6lzsd7rwzhe" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -376,15 +376,23 @@
 </footer>
         
     
-<div id="fb-root"></div>
 <script>
-(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=208299293241640&autoLogAppEvents=1';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '166618053965795',
+      xfbml      : true,
+      version    : 'v2.12'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 </script>
 
 
