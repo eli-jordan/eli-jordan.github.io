@@ -1,5 +1,6 @@
 ---
 title: test
+description: test post
 date: 2018-02-15 22:22:48
 comments: true
 categories:
@@ -11,7 +12,7 @@ tags:
 - baz
 ---
 
-[test link](./testPage) some stuff
+[test link](/testPage) some stuff
 
 
 {% blockquote David Levithan, Wide Awake %}
@@ -20,6 +21,6 @@ Do not just seek happiness for yourself. Seek happiness for all. Through kindnes
 
 ```scala
 object Life {
-	// is a comonad
+   // is a comonad
 }
 ```
