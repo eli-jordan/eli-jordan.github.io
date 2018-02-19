@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://eli-jordan.github.io/2018/02/16/life-is-a-comonad/</loc>
+    
+    <lastmod>2018-02-19T10:13:58.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://eli-jordan.github.io/tags/index.html</loc>
     
     <lastmod>2018-02-18T10:52:07.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://eli-jordan.github.io/about/index.html</loc>
     
     <lastmod>2018-02-18T10:43:51.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://eli-jordan.github.io/2018/02/16/life-is-a-comonad/</loc>
-    
-    <lastmod>2018-02-18T10:35:37.000Z</lastmod>
     
   </url>
   
