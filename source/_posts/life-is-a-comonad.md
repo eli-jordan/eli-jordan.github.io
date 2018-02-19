@@ -16,7 +16,7 @@ In this post I aim to convey an intuitive understanding of the structure of a `C
 A `Comonad` is the [categorical dual](https://en.wikipedia.org/wiki/Dual_%28category_theory%29) of a `Monad`. This simply means that we "reverse the arrows" in the definition of a `Monad`
 
 ```scala Monad / Comonad Duality
-trait Monad[M[_]] {
+trait Monad[F[_]] {
    def unit[A](a: A): F[A]
    def join[A](ffa: F[F[A]]): F[A]
 }
@@ -128,14 +128,14 @@ implicit object ZipperComonad[StreamZipper] {
 Summarising, a `Comonad` has two operations
 
 - `counit` extracts a focus element from a structure
-- `cojoin` extends the structure, so that every element in the original structure, there is a copy of the structure with the focus on the corresponding element.
+- `cojoin` extends the structure, so that for every element in the original structure, there is a copy of the structure with the focus on the corresponding element.
 
 ## Comonad coflatMap
 
 You may have noticed that the definition of `Monad` that I used is a bit different than how it is normally expressed in scala. In particular, I used `unit` and `join` rather than `unit` and `flatMap`. However, these definitions are equivalent. Taking our definition of monad, we can define `flatMap` in terms of `map` and `join`
 
 ```scala Deriving flatMap
-trait Monad[M[_]] {
+trait Monad[F[_]] {
    def unit[A](a: A): F[A]
    def join[A](ffa: F[F[A]]): F[A]
    
@@ -230,7 +230,7 @@ The intuition that `cojoin` duplicates the structure, with the focus shifted, is
 
 - We can think of `S => A` as an infinite space of `A's` that we index into using `S`.
 - If we then consider that `cojoin` duplicates the structure to `Store[S, Store[S, A]]`, so we have `S => Store[S, A]` which is an infinite space of `Store` objects indexed by `S`.
-- If we then index into this infinite stream of `Store` objects using an `S` we will obtain a `Store[S, A]` with the same structure as our original, but with the focus set to the index used to extract the `Store` instance.
+- If we then index into this infinite space of `Store` objects using an `S` we will obtain a `Store[S, A]` with the same structure as our original, but with the focus set to the index used to extract the `Store` instance.
 
 So, for every `A` we could extract from the original `Store` using some `S` we can extract a `Store[S, A]` from the `cojoin`ed store using the same the same `S` and the focus will be defined by the provided `S` index. 
 
