@@ -71,7 +71,7 @@ The `left` member contains all elements that precede the focus element, in rever
 What does this have to do with `Comonads`? Well, since we have a focus element, we have a way to **extract** an `A` element from an `F[A]`, by simply accessing the focus element. This is exactly what we need to implement `counit`
 
 ```scala Counit
-implicit object ZipperComonad[StreamZipper] {
+implicit object ZipperComonad extends Comonad[StreamZipper] {
   def counit[A](fa: StreamZipper[A]): A = 
     fa.focus
   def cojoin[A](fa: StreamZipper[A]): StreamZipper[StreamZipper[A]] = ???
@@ -116,7 +116,7 @@ case class StreamZipper[A](left: Stream[A], focus: A, right: Stream[A]) {
 Now defining the `Comonad` instance is trivial
 
 ```scala Comonad instance
-implicit object ZipperComonad[StreamZipper] {
+implicit object ZipperComonad extends Comonad[StreamZipper] {
   def counit[A](fa: StreamZipper[A]): A = 
     fa.focus
 
