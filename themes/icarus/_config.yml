@@ -2,6 +2,7 @@
 menu:
   Home: .
   About: about
+  Talks: talks
   Archives: archives
   # Categories: categories
   Tags: tags
