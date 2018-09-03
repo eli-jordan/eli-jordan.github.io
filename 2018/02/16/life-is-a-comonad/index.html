@@ -293,7 +293,7 @@ ga('send', 'pageview');
 <p><code>counit</code> is trivial, we simply apply the <code>lookup</code> function to the current index.</p>
 <p><code>cojoin</code> is more interesting.</p>
 <ul>
-<li>Since we are fixing <code>S</code> we want to generate <code>Store[A, Store[S, A]]</code>.</li>
+<li>Since we are fixing <code>S</code> we want to generate <code>Store[S, Store[S, A]]</code>.</li>
 <li>Since we are replacing <code>A</code> with <code>Store[S, A]</code>, and <code>A</code> is only used in the return type of <code>lookup</code>, we need to define a new <code>lookup</code> function of type <code>S =&gt; Store[S, A]</code>.</li>
 <li>We do this by partially applying the store constructor <code>Store(lookup)</code> since this has exactly the type we need.</li>
 <li>We then copy the current store, replacing the <code>lookup</code> function with a partially applied constructor and we're done.</li>
