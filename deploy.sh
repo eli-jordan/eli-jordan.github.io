@@ -1,2 +1,3 @@
 #!/bin/bash
-hexo clean && hexo deploy
+
+./node_modules/.bin/hexo clean && ./node_modules/.bin/hexo deploy
