@@ -221,7 +221,7 @@ One thing to notice is that `Store` take two type parameters, so to define a `Co
 
 `cojoin` is more interesting. 
 
-- Since we are fixing `S` we want to generate `Store[A, Store[S, A]]`. 
+- Since we are fixing `S` we want to generate `Store[S, Store[S, A]]`. 
 - Since we are replacing `A` with `Store[S, A]`, and `A` is only used in the return type of `lookup`, we need to define a new `lookup` function of type `S => Store[S, A]`. 
 - We do this by partially applying the store constructor `Store(lookup)` since this has exactly the type we need. 
 - We then copy the current store, replacing the `lookup` function with a partially applied constructor and we're done.
