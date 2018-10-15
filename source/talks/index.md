@@ -5,3 +5,4 @@ comments: false
 ---
 
 - April 2018 &mdash; [Life Is A Comonad @ Scala Syd](./life-is-a-comonad-talk.html)
+- August 2018 &mdash; [Life Is A Comonad @ Compose Melbourne](./life-is-a-comonad-talk.html)

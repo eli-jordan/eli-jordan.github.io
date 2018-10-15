@@ -10,7 +10,12 @@ I have recently been grappling with the concept of a Comonad, and found that the
 
 In this talk I will introduce comonads using the Zipper data structure as an analogy, then show how this data structure, along with its comonad instance can be used to implement Conway's Game Of Life.
 
-## Links
+## At Scala Syd &ndash; April 2018
 
-- [Meetup Event](https://www.meetup.com/scalasyd/events/249590115/)
+- [Scala Syd Meetup Event](https://www.meetup.com/scalasyd/events/249590115/)
+- [Slides](http://slides.com/elijordan/life-is-a-comonad)
+
+## At [Compose Conference](http://www.composeconference.org/) &ndash; August 2018
+
+- [Video](https://www.youtube.com/watch?v=6eiS2QTQKPE)
 - [Slides](http://slides.com/elijordan/life-is-a-comonad)
