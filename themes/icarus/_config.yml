@@ -20,7 +20,7 @@ customize:
         gravatar: # Gravatar email address, if you enable Gravatar, your avatar config will be overriden
         author: Eli Jordan
         author_title: Software Engineer
-        location: Sydney, Australia
+        location: Oslo, Norway
         follow: http://github.com/eli-jordan
     highlight: solarized-dark
     sidebar: right # sidebar position, options: left, right or leave it empty
