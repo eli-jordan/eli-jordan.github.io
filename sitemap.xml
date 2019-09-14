@@ -2,23 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://eli-jordan.github.io/talks/life-is-a-comonad-talk.html</loc>
+    <loc>https://eli-jordan.github.io/about/index.html</loc>
     
-    <lastmod>2018-10-15T05:57:28.844Z</lastmod>
+    <lastmod>2019-09-14T11:55:00.769Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://eli-jordan.github.io/talks/tagless-final-and-abstract-effects.html</loc>
+    
+    <lastmod>2019-09-14T11:52:37.438Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://eli-jordan.github.io/talks/index.html</loc>
     
-    <lastmod>2018-10-15T05:52:07.491Z</lastmod>
+    <lastmod>2019-09-14T11:52:02.857Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://eli-jordan.github.io/talks/life-is-a-comonad-talk.html</loc>
+    
+    <lastmod>2018-10-15T05:57:28.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://eli-jordan.github.io/2018/02/16/life-is-a-comonad/</loc>
     
-    <lastmod>2018-09-03T04:51:28.286Z</lastmod>
+    <lastmod>2018-09-03T04:51:28.000Z</lastmod>
     
   </url>
   
@@ -26,13 +40,6 @@
     <loc>https://eli-jordan.github.io/tags/index.html</loc>
     
     <lastmod>2018-02-18T10:52:07.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://eli-jordan.github.io/about/index.html</loc>
-    
-    <lastmod>2018-02-18T10:43:51.000Z</lastmod>
     
   </url>
   
