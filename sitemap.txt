@@ -1,0 +1,9 @@
+https://eli-jordan.github.io/talks/index.html
+https://eli-jordan.github.io/talks/life-is-a-comonad-talk.html
+https://eli-jordan.github.io/talks/tagless-final-and-abstract-effects.html
+https://eli-jordan.github.io/2018/02/16/life-is-a-comonad/
+https://eli-jordan.github.io/about/index.html
+https://eli-jordan.github.io/
+https://eli-jordan.github.io/tags/functional-programming/
+https://eli-jordan.github.io/tags/scala/
+https://eli-jordan.github.io/tags/comonad/
