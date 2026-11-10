@@ -1,9 +1,13 @@
 # Version of the configuration file
-version: 5.0.0
-# Icarus theme variant, can be "default" or "cyberpunk"
+version: 7.0.0
+# Icarus theme variant, can be "default", "cyberpunk" or "m3e" (Material 3 Expressive)
 variant: default
+# Color scheme of the default and m3e variants, can be "light", "dark" or "auto" (light or dark following the setting of the browser or system of each visitor). Can be set per page in the front-matter or in layout configuration files such as _config.post.yml. Ignored by the cyberpunk variant, which is always dark
+appearance: light
 # Path or URL to the website's logo
 logo: /img/logo.svg
+# Path or URL to the logo shown instead of the logo image when the default or m3e variant looks dark (see appearance), and always by the cyberpunk variant. Without it, the theme's own logo switches to /img/logo-dark.svg and other logos stay the same
+logo_dark: 
 # Page metadata configurations
 head:
     # URL or path to the website's icon
@@ -42,7 +46,7 @@ head:
         title: 
         # Page type (og:type) (optional)
         # You should leave this blank for most of the time
-        type: blog
+        type: 
         # Page URL (og:url) (optional)
         # You should leave this blank for most of the time
         url: 
@@ -64,7 +68,7 @@ head:
         twitter_id: 
         # Twitter Site (twitter:site)
         twitter_site: 
-        # Google+ profile link (deprecated)
+        # Google+ profile link (deprecated; ignored)
         google_plus: 
         # Facebook admin ID
         fb_admins: 
@@ -103,6 +107,8 @@ head:
     rss: 
 # Page top navigation bar configurations
 navbar:
+    # Whether the navigation bar stays at the top of the window when the page scrolls. true for all screen widths, "mobile" for screens narrower than 769px only, false to scroll it away with the page
+    sticky: false
     # Navigation menu items
     menu:
         Home: /
@@ -117,6 +123,8 @@ navbar:
             url: https://github.com/ppoffice/hexo-theme-icarus
 # Page footer configurations
 footer:
+    # Copyright text
+    copyright: © 2019
     # Links to be shown on the right of the footer section
     links:
         Creative Commons:
@@ -135,14 +143,25 @@ article:
         # Code highlight themes
         # https://github.com/highlightjs/highlight.js/tree/master/src/styles
         theme: atom-one-light
+        # Code highlight theme used when the default variant looks dark (see appearance)
+        # https://github.com/highlightjs/highlight.js/tree/master/src/styles
+        dark_theme: atom-one-dark
         # Show copy code button
         clipboard: true
         # Default folding status of the code blocks. Can be "", "folded", "unfolded"
         fold: unfolded
+        # Number of lines that a folded code block still shows, fading out, as a preview that unfolds the block when clicked. 0 hides the code of folded blocks
+        fold_preview: 0
     # Whether to show estimated article reading time
     readtime: true
     # Whether to show updated time. For "auto", shows article update time only when page.updated is set and it is different from page.date
     update_time: true
+    # Notice shown at the top of posts that were last updated (or, without an update time, posted) a long time ago. Readers' browsers compute the age, so that it stays right on a static site; the notice can be turned off in the front-matter of a post with "outdated_notice: false"
+    outdated_notice:
+        # Whether to show the notice
+        enable: false
+        # Number of days after the last update from which the post is considered outdated
+        days: 365
     # Article licensing block
     licenses:
         Creative Commons:
@@ -218,7 +237,7 @@ sidebar:
     right:
         # Whether the sidebar sticks to the top when page scrolls
         sticky: false
-# Sidebar widget configurations
+# Sidebar widget configurations. Set to null to disable all widgets
 # http://ppoffice.github.io/hexo-theme-icarus/categories/Widgets/
 widgets:
     # Profile widget configurations
@@ -282,16 +301,40 @@ widgets:
         # Where should the widget be placed, left sidebar or right sidebar
         position: left
         type: categories
+        # Amount of top-level categories to show, with a link to the category page for the rest. Will show all if not set
+        amount: 
+        # How to order the categories. For example 'name' to order by name, and 'length' to order by number of posts. Orders by name if not set
+        order_by: 
+        # 1 for ascending order, or -1 for descending order. Ascending if not set
+        order: 
+        # Levels of categories to show, for example 1 for the top-level categories only. Shows all levels if not set or 0
+        depth: 
+        # Whether to highlight the categories of the current post
+        show_current: 
+        # Whether to show the number of posts of each category
+        show_count: true
     # Recent posts widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
         position: left
         type: recent_posts
+        # Number of recent posts to show. Shows 5 if not set
+        limit: 
     # Archives widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
         position: left
         type: archives
+        # Amount of archives to show, with a link to the archive page for the rest. Will show all if not set
+        amount: 
+        # Whether to group the archives by month or by year. Groups by month if not set
+        group_by: 
+        # 1 to show the oldest archives first, or -1 to show the newest first. Shows the newest first if not set
+        order: 
+        # Moment.js format of the archive names, such as 'MMMM YYYY' (by month) or 'YYYY' (by year), which are used if not set
+        format: 
+        # Whether to show the number of posts of each archive
+        show_count: true
     # Tags widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
@@ -299,19 +342,21 @@ widgets:
         type: tags
         # How to order tags. For example 'name' to order by name in ascending order, and '-length' to order by number of posts in each tags in descending order
         order_by: name
-        # Amount of tags to show. Will show all if not set.
+        # Amount of tags to show, with a link to the tag page for the rest. Will show all if not set.
         amount: 
         # Whether to show tags count, i.e. number of posts in the tag.
         show_count: true
-    # Google FeedBurner email subscription widget configurations
+    # Responsive GitHub contribution calendar. Data is loaded from the third-party github-contributions-api.jogruber.de service; no GitHub token is needed
     -
         # Where should the widget be placed, left sidebar or right sidebar
         position: left
-        type: subscribe_email
-        # Hint text under the email input
-        description: 
-        # Feedburner ID
-        feedburner_id: ''
+        type: github_calendar
+        # GitHub username. Leave empty to hide this widget
+        username: 
+        # Widget title. Leave empty to use the translated default
+        title: 
+        # Optional six-digit hex color, for example '#40c463'. Leave empty to use the theme's calendar palette
+        color: 
     # Google AdSense unit configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
@@ -359,10 +404,10 @@ plugins:
         id: 
         # CNZZ website id
         web_id: 
-    # Alerting users about the use of cookies
+    # Cookie notice and tracking consent
     # https://www.osano.com/cookieconsent/
     cookie_consent:
-        # The compliance type. Can be "info", "opt-in", or "opt-out"
+        # info: notice only; opt-in: load after consent; opt-out: load until denied
         type: info
         # Theme of the popup. Can be "block", "edgeless", or "classic"
         theme: edgeless
@@ -387,12 +432,24 @@ plugins:
     # Enable the KaTeX math typesetting support
     # https://katex.org/
     katex: false
-    # Enable the MathJax math typesetting support
+    # Enable MathJax math typesetting
     # https://www.mathjax.org/
     mathjax: false
-    # Enable the Outdated Browser plugin
-    # http://outdatedbrowser.com/
+    # Matomo analytics plugin settings
+    # https://matomo.org
+    matomo:
+        # URL of your Matomo server, e.g., https://matomo.example.com/ or https://example.matomo.cloud/
+        url: 
+        # Matomo site ID
+        site_id: 
+        # Track visitors without setting cookies
+        disable_cookies: false
+    # Warn when required CSS features are unsupported
     outdated_browser: false
+    # Enable PJAX
+    pjax: true
+    # Prefetch the pages of the site that the visitor hovers over or touches the links to, so that they open faster. Not when the visitor has asked to save data
+    prefetch: false
     # Show a progress bar at top of the page on page loading
     progressbar: true
     # Statcounter statistics
@@ -407,11 +464,29 @@ plugins:
     twitter_conversion_tracking:
         # Twitter Pixel ID
         pixel_id: 
+    # Umami analytics plugin settings
+    # https://umami.is/docs/tracker-configuration
+    umami:
+        # Umami website ID
+        website_id: 
+        # URL of the Umami tracker script. Change it to the one on your server if you host Umami yourself
+        script_url: https://cloud.umami.is/script.js
+        # Only track the visits on these comma-separated domains
+        domains: 
+    # Waline page view counter, true to use the server of the Waline comments. Do not also enable the pageview option of the Waline comments, which would count the views twice
+    # https://waline.js.org/en/guide/features/pageview.html
+    waline_pageview: false
 # CDN provider settings
-# https://ppoffice.github.io/hexo-theme-icarus/Configuration/Theme/speed-up-your-site-with-custom-cdn/
+# https://ppoffice.github.io/hexo-theme-icarus/Configuration/icarus-user-guide-cdn-providers/
 providers:
     # Name or URL template of the JavaScript and/or stylesheet CDN provider
     cdn: jsdelivr
+    # CDN providers (same names as cdn) or URL templates of the packages that do not use the cdn provider above, by package name, e.g.
+    #     jquery: unpkg
+    #     highlight.js: https://cdn.example.com/${package}@${version}/${filename}
+    # A URL without ${package}, ${version} or ${filename} is used as is for every file of the package, so only use it for packages that load a single file, e.g.
+    #     clipboard: https://example.com/js/clipboard.min.js
+    cdn_overrides: {}
     # Name or URL template of the webfont CDN provider
     fontcdn: google
     # Name or URL of the fontawesome icon font CDN provider

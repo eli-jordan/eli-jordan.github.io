@@ -1,5 +1,6 @@
-version: 5.1.0
+version: 7.0.0
 variant: default
+appearance: auto
 logo: images/lambda.png
 head:
     favicon: images/lambda.png
@@ -17,7 +18,6 @@ head:
                 type: 
     open_graph:
         title: 
-        type: blog
         url: 
         image: 
         site_name: 
@@ -26,7 +26,6 @@ head:
         twitter_card: 
         twitter_id: 
         twitter_site: 
-        google_plus: 
         fb_admins: 
         fb_app_id: 
     structured_data:
@@ -46,70 +45,21 @@ navbar:
         About: about
         Talks: talks
         Archives: archives
-        #Categories: /categories
         Tags: tags
-        
-    links:
-        # Download on GitHub:
-        #     icon: fab fa-github
-        #     url: https://github.com/ppoffice/hexo-theme-icarus
+    links: 
 footer:
-    links:
-        # Creative Commons:
-        #     icon: fab fa-creative-commons
-        #     url: https://creativecommons.org/
-        # Attribution 4.0 International:
-        #     icon: fab fa-creative-commons-by
-        #     url: https://creativecommons.org/licenses/by/4.0/
-        # Download on GitHub:
-        #     icon: fab fa-github
-        #     url: https://github.com/ppoffice/hexo-theme-icarus
+    links: 
 article:
     highlight:
-        theme: solarized-dark
+        theme: base16/solarized-dark
+        dark_theme: base16/solarized-dark
         clipboard: true
         fold: unfolded
     readtime: true
     update_time: true
-    # licenses:
-    #     Creative Commons:
-    #         icon: fab fa-creative-commons
-    #         url: https://creativecommons.org/
-    #     Attribution:
-    #         icon: fab fa-creative-commons-by
-    #         url: https://creativecommons.org/licenses/by/4.0/
-    #     Noncommercial:
-    #         icon: fab fa-creative-commons-nc
-    #         url: https://creativecommons.org/licenses/by-nc/4.0/
 search:
     type: insight
     index_pages: true
-# comment:
-#     type: disqus
-#     shortname: ''
-# donates:
-#     -
-#         type: afdian
-#         url: ''
-#     -
-#         type: alipay
-#         qrcode: ''
-#     -
-#         type: buymeacoffee
-#         url: ''
-#     -
-#         type: patreon
-#         url: ''
-#     -
-#         type: paypal
-#         business: ''
-#         currency_code: USD
-#     -
-#         type: wechat
-#         qrcode: ''
-# share:
-#     type: sharethis
-#     install_url: ''
 sidebar:
     left:
         sticky: false
@@ -126,25 +76,7 @@ widgets:
         avatar_rounded: false
         gravatar: 
         follow_link: http://github.com/eli-jordan
-        social_links:
-            # Github:
-            #     icon: fab fa-github
-            #     url: https://github.com/eli-jordan
-            # LinkedIn:
-            #     icon: fab fa-linkedin
-            #     url: https://www.linkedin.com/in/elijordan/
-            # Facebook:
-            #     icon: fab fa-facebook
-            #     url: https://facebook.com
-            # Twitter:
-            #     icon: fab fa-twitter
-            #     url: https://twitter.com
-            # Dribbble:
-            #     icon: fab fa-dribbble
-            #     url: https://dribbble.com
-            # RSS:
-            #     icon: fas fa-rss
-            #     url: /
+        social_links: 
     -
         position: left
         type: toc
@@ -157,37 +89,15 @@ widgets:
         links:
             Github: https://github.com/eli-jordan
             LinkedIn: https://www.linkedin.com/in/elijordan/
-    # -
-    #     position: left
-    #     type: categories
     -
         position: right
         type: recent_posts
-    # -
-    #     position: left
-    #     type: archives
     -
         position: right
         type: tags
         order_by: name
         amount: 
         show_count: true
-    # -
-    #     position: left
-    #     type: subscribe_email
-    #     description: 
-    #     feedburner_id: ''
-    # -
-    #     position: left
-    #     type: adsense
-    #     client_id: ''
-    #     slot_id: ''
-    # -
-    #     position: left
-    #     type: followit
-    #     description: 
-    #     action_url: ''
-    #     verification_code: ''
 plugins:
     animejs: true
     back_to_top: true
