@@ -4,6 +4,9 @@ date: 2018-02-15 22:24:29
 comments: false
 ---
 
-I am currently a Senior Software Engineer at [Tapad](https://www.tapad.com/), where I lead a team working on infrastructure and deployment automation. 
+I'm a Hands-on architect and engineer with 15+ years building distributed systems, builing platforms other engineers rely on and leading high impact teams. 
+My work has spanned self-service deployment, CI/CD, SLOs and observability platforms, to socio-technical architecture through team topologies and into technology leadership. 
 
-My first programming language was Haskell, but I was diverted into enterprise java for quite some time. I have always maintained my passion for functional programming and in the last few years have convinced my workplace to embrace scala and functional programming techniques. I believe strong static typing, and purity are the only way to maintain your sanity while implementing complex distributed systems.
+I currently lead architecture for Experian Marketing Services. Where we work on simplifying, standarising and streamlining our technology estate.
+
+I'm a software craftsman at heart - I care about making developers daily work delightful, as much as delivering valuable software to customers.
